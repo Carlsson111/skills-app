@@ -3,14 +3,18 @@ import { useForm } from "react-hook-form";
 
 const ShowData = ({ skills }) => {
     return React.createElement(
-        "ul", 
-        { className: "list-group mt-3" }, 
+        "table", 
+        { className: "table table-striped table-bordered mt-3" }, 
+        React.createElement(
+            "tbody",
+            null,
         skills.map((skill, ) =>
-            React.createElement("li", 
-                {key: skill.id, className: "list-group-item" },
-                skill.title
+            React.createElement("tr", 
+                {key: skill.id },
+                React.createElement("td", null, skill.title),
             )
         )
+    )
     );
 };
 const Form = ({ onAdd}) => {
